@@ -177,33 +177,6 @@ public class Pattern {
         }
     }
 
-// recording 1
-    public static void practice1(int n) {
-        for (int i=1 ; i<=n ; i++) {
-            for(int j=1 ; j<=(n-i+1) ; j++) {
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
-    }
-
-    // practice 2
-    public static void practice2(int n) {
-        for(int i=1 ; i<=n ; i++) {
-            for(int j=1 ; j<i ; j++) {
-                System.out.print(" ");
-            }
-            for(int j=i ; j<=n ; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-
-
-   
-  
-
     public static void main(String args[]) {
       //   hollow_rectangle(4, 5);
       //   inverted_half_pyramid(4);
@@ -213,9 +186,7 @@ public class Pattern {
       //   butterfly(4);
       //   rhombus(5);
       //   hollow_rhombus(5);
-      //   diamond(4);
-      //   practice1(5);
-      //    practice2(5);
+            diamond(4);
         
     }
 }
