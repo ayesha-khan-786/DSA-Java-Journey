@@ -13,6 +13,16 @@ public class LinkedList {
     public static Node head;
     public static Node tail;
 
+     public void addFirst(int data) {
+        Node newNode = new Node(data);
+        if(head == null) {
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;        
+        head = newNode;
+    }
+
 
     // Methods to add last
     public void addLast(int data) {
@@ -42,6 +52,10 @@ public class LinkedList {
 
     // Add int he Middle of LL
     public void addMiddle(int idx, int data) {
+        if(idx == 0) {
+            addFirst(data);
+            return;
+        }
         Node newNode = new Node(data);
         Node temp = head;
         int i = 0;      
