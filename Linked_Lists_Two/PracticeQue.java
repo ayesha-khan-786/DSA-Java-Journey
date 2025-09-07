@@ -69,3 +69,23 @@ public static void main(String args[]) {
 }
 
 // Time Complexity - O(n)  | Space COmplexity - O(1)
+
+// Solution 2 - Using Hashset
+public class Solution {
+
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        HashSet<ListNode> set = new HashSet<>();
+
+        while(headA != null) {
+            headA = headA.next;
+        }
+         while(headB != null) {
+           if(set.contains(headB)) {
+            return headB;
+           }
+           headB = headB.next;
+        }
+        return null;
+
+    }
+}
