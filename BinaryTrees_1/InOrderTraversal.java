@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class PreorderTraversal {
+public class InOrderTraversal {
 
     static class Node {
         int data;
@@ -16,7 +16,7 @@ public class PreorderTraversal {
     }
 
     static class BinaryTree {
-        static int idx = -1;        // static bcoz idx should update at each level
+        static int idx = -1;        
         
         public static Node buildTree(int nodes[]) {
             idx++;
@@ -36,13 +36,14 @@ public class PreorderTraversal {
             return newNode;
         }
 
-        public static void preorder(Node root) {
+        public static void inorder(Node root) {
             if(root == null) {
                 return;
             } 
+            
+            inorder(root.left);
             System.out.print(root.data + " ");
-            preorder(root.left);
-            preorder(root.right);
+            inorder(root.right);
         }
     }
 
@@ -51,7 +52,7 @@ public class PreorderTraversal {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
        
-        tree.preorder(root);
+        tree.inorder(root);
     }
 }
 
