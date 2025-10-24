@@ -1,5 +1,4 @@
-// Lowest common ancestor
-// Kth Level
+// Lowest common ancestor (Approach 1)
 
 import java.util.*;
 
