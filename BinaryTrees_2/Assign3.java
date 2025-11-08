@@ -64,3 +64,5 @@ public class Assig3 {
 }
 
 }
+
+// Time Complexity = O(n)
