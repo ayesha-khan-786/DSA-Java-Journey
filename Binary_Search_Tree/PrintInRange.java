@@ -1,4 +1,3 @@
-// Build a BST
 import java.util.*;
 
 public class PrintInRange {
