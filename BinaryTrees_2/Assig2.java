@@ -1,4 +1,4 @@
-// Question 2 :Invert Binary - Tree Mirror of a TreeMi
+// Question 2 :Invert Binary - Tree Mirror
 
 import java.util.*;
 
