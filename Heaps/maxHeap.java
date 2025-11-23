@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class RemoveFromHeap {
+public class maxHeap {
 
     static class Heap {
         ArrayList<Integer> arr = new ArrayList<>();
@@ -29,23 +29,23 @@ public class RemoveFromHeap {
     private void heapify(int i) {
         int left = 2*i+1;
         int right = 2*i+2;
-        int minIdx = i;
+        int maxIdx = i;
 
-        if(left < arr.size() && arr.get(minIdx) < arr.get(left)) {      //left < arr.size() i.e check cond for leaf node i.e if left not exit
-            minIdx = left;                                              // if minIdx > left
+        if(left < arr.size() && arr.get(maxIdx) < arr.get(left)) {      //left < arr.size() i.e check cond for leaf node i.e if left not exit
+            maxIdx = left;                                              // if maxIdx > left
         }
 
-        if(right < arr.size() && arr.get(minIdx) < arr.get(right)) {    // if right not exit && right is small then minIdx
-            minIdx = right;
+        if(right < arr.size() && arr.get(maxIdx) < arr.get(right)) {    // if right not exit && right is small then maxIdx
+            maxIdx = right;
         }
 
-        if(minIdx != i) {
+        if(maxIdx != i) {
             // swap root to fix heap with minIdx
             int temp = arr.get(i);
-            arr.set(i, arr.get(minIdx));
-            arr.set(minIdx, temp);
+            arr.set(i, arr.get(maxIdx));
+            arr.set(maxIdx, temp);
 
-            heapify(minIdx);        // where val is changed call there to fix heap there
+            heapify(maxIdx);        // where val is changed call there to fix heap there
         }
     }
 
