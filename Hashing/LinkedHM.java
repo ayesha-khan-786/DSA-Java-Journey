@@ -1,3 +1,4 @@
+// LinkedHashMap -> keys are display in insertion order 
 import java.util.*;
 
 public class LinkedHM {
