@@ -58,7 +58,7 @@ public class Longest_Word {
             return;
         }
 
-        for(int i=0 ; i<26 ; i++) {
+        for(int i=0 ; i<26 ; i++) {     // print in lexicographical order-> a,b,c.. if i=25, i>=0 -> z,y,x (ans = apply)
             if(root.children[i] != null && root.children[i].eow == true) {
                 char ch = (char)(i+'a');
                 temp.append(ch);
