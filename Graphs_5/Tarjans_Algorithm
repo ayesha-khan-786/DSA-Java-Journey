@@ -1,0 +1,43 @@
+Articulation Point
+Anarticulation point (or cut vertex) is a vertex in an undirected connected graph if removing it( and edges through it)
+disconnects the graph. Articulation points are single points in a connected network that if they fail, split the network into two or more components.
+They are useful in the design of dependable networks.An articulation point in a disconnected undirected graph is a vertex removal that increases the 
+number of connected components.
+
+        1 -- 5 -- 9
+        |  /      |
+        | /       |
+        |/        |
+        2         4
+
+In this 5 and 9 are articulation points
+        0
+        |
+        8
+        5
+        |
+        1
+
+1 and 2 Articulation Ponits
+
+Articulation Points in a Graph using Tarjan’s Algorithm:
+
+The idea is to use DFS(Depth First Search). In DFS, follow vertices in a tree form called the DFS tree. In the DFS tree, a vertex u is the parent of another vertex v, if v is discovered by u.
+
+In DFS tree, a vertex u is an articulation point if one of the following two conditions is true.
+
+a.  u is the root of the DFS tree and it has at least two children.
+b.  u is not the root of the DFS tree and it has a child v such that no vertex in the subtree rooted with v has a back edge to one of the ancestors in DFS tree of u.
+
+The following figure shows the same points as above with one additional point that a leaf in DFS Tree can never be an articulation point.
+
+Follow the below steps to Implement the idea: Do DFS traversal of the given graph
+
+●   In DFS traversal, maintain a parent[] array where parent[u] stores the parent of vertex u.
+●   To check if u is the root of the DFS tree and it has at least two children.For every vertex, count children. If the currently visited vertex u is root   (parent[u] is NULL) and has more than two children, print it.
+●   To handle a second case where u is not the root of the DFS tree and it has a child v such that no vertex in the subtree rooted with v has a back edge to one of the ancestors in DFS tree of u maintain an array disc[] to store the discovery time of vertices.
+●   For every node u,find out the earliest visited vertex(the vertex with minimum discovery time) that can be reached from the subtree rooted with u.So we maintain an additional array low[] such that:
+
+    low[u] = min(disc[u], disc[w]), Here w is an ancestor of u and there is a back edge from some descendant of u to w.
+
+
