@@ -1,4 +1,4 @@
-// Climbing stairs using Recursion
+// Climbing stairs using Recursion -> O(2^n)
 
 public class Climbing_stairs {
 
