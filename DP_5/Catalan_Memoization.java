@@ -1,4 +1,4 @@
-// Catalan's Number using Recursion
+// Catalan's Number using Memoization
 import java.util.*;
 
 public class Catalan_Memoization {
